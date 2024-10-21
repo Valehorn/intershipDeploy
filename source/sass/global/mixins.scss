@@ -1,0 +1,13 @@
+@use "./variables";
+
+@mixin decoration-angle($width: 26px, $height: 26px, $mask-size: $width $height, $background-color: #ffffff) {
+  position: absolute;
+  content: "";
+  width: $width;
+  height: $height;
+  mask-image: url("/__spritemap#sprite-angle-view");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: $mask-size;
+  background-color: $background-color;
+}

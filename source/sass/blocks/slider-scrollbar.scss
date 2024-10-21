@@ -1,0 +1,63 @@
+@use "../global/variables";
+
+.slider-scrollbar {
+  display: none;
+  cursor: grab;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    display: block;
+    width: 562px;
+    height: 15px;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+
+    // Ползунок внутри скроллбара.
+    div {
+      height: 15px;
+      background-color: transparent;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: $primary-color;
+        transition: background-color 0.3s ease;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: rgba(49, 109, 194, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    &:hover {
+      &::after {
+        background-color: rgba(93, 0, 255, 0.2);
+      }
+    }
+
+    div:hover::after {
+      background-color: #5d00ff;
+    }
+
+    div:active::after {
+      background-color: #5d00ff;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1136px;
+  }
+}

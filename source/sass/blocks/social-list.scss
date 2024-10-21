@@ -1,0 +1,121 @@
+@use "../global/variables";
+
+.social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    justify-self: end;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-row: 1 / 2;
+    gap: 10px 20px;
+    padding-top: 8px;
+  }
+}
+
+.social-list__link {
+  --social-icon: 0;
+  --social-icon-width: 0;
+  --social-icon-height: 0;
+
+  position: relative;
+  width: 26px;
+  height: 26px;
+  background-color: $primary-color;
+  border-radius: 100%;
+  outline: 1px solid transparent;
+  transition: background-color 0.3s ease;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: var(--social-icon-width);
+    height: var(--social-icon-height);
+    mask-image: var(--social-icon);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    background-color: #ffffff;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &:focus-visible {
+    background-color: #ffffff;
+
+    &::after {
+      background-color: $primary-color;
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    background-color: #275699;
+
+    &::after {
+      background-color: #ffffff;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.social-list__link--vk {
+  --social-icon: url("/__spritemap#sprite-vk-view");
+  --social-icon-width: 11.56px;
+  --social-icon-height: 6.3px;
+
+  @media (min-width: $tablet-width) {
+    --social-icon-width: 15.56px;
+    --social-icon-height: 10.3px;
+  }
+}
+
+.social-list__link--classmates {
+  --social-icon: url("/__spritemap#sprite-classmates-view");
+  --social-icon-width: 6.83px;
+  --social-icon-height: 11.56px;
+
+  @media (min-width: $tablet-width) {
+    --social-icon-width: 10.83px;
+    --social-icon-height: 15.56px;
+  }
+}
+
+.social-list__link--reddit {
+  --social-icon: url("/__spritemap#sprite-reddit-view");
+  --social-icon-width: 10.51px;
+  --social-icon-height: 11.03px;
+
+  @media (min-width: $tablet-width) {
+    --social-icon-width: 14.51px;
+    --social-icon-height: 15.03px;
+  }
+}
+
+.social-list__link--disabled {
+  background-color: $disabled;
+  pointer-events: none;
+
+  &::after {
+    opacity: 0.7;
+  }
+}

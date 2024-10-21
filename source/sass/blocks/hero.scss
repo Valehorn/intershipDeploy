@@ -1,0 +1,341 @@
+@use "../global/variables";
+
+.hero__card {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 80px;
+  height: 568px;
+  background-color: #b0c4de;
+  padding-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 92px;
+    height: 1024px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 800px;
+  }
+}
+
+.hero__image-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.hero__image {
+  display: block;
+  object-fit: cover;
+}
+
+.hero__slide-title {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: $primary-color;
+  background-color: #ffffff;
+  border-radius: 0 16px 16px 0;
+  padding: 20px 15px 16px 14px;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 36px;
+    line-height: 44px;
+    width: 659px;
+    border-radius: 0 30px 30px 0;
+    padding-top: 30px;
+    padding-bottom: 24px;
+    padding-left: 40px;
+    padding-right: 69px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 54px;
+    line-height: 62px;
+    width: 968px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.hero__group-tablet-plus {
+  display: contents;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 593px;
+    background-color: #ffffff;
+    border-radius: 0 0 30px 30px;
+    padding-bottom: 35px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    &::after {
+      top: 0;
+      right: -26px;
+      transform: rotate(90deg);
+
+      @include decoration-angle;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    align-items: center;
+    width: 775px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.hero__slide-inner {
+  position: relative;
+  z-index: 1;
+
+  // Переполнение.
+  max-height: 475px;
+  overflow: auto;
+
+  @media (min-width: $tablet-width) {
+    max-height: 860px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-height: 650px;
+  }
+}
+
+.hero__slide-inner p {
+  position: relative;
+  font-size: 16px;
+  line-height: 20px;
+  width: 267px;
+  background-color: #ffffff;
+  border-radius: 0 0 14px;
+  padding: 0 14px 15px;
+  margin: 0;
+
+  &::after {
+    top: -1px;
+    right: -8px;
+    transform: rotate(90deg);
+
+    @include decoration-angle(8px, 10px);
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 285px;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
+    width: 446px;
+  }
+}
+
+.hero__link-wrapper {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0 0 14px 14px;
+  width: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &::after {
+    top: -1px;
+    right: -8px;
+    transform: rotate(90deg);
+
+    @include decoration-angle(8px, 10px);
+  }
+
+  @media (min-width: $tablet-width) {
+    display: contents;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.hero__link {
+  letter-spacing: 0.24px;
+  min-width: 154px;
+  min-height: 44px;
+
+  &::before {
+    width: 34px;
+    height: 34px;
+  }
+
+  &::after {
+    right: 20px;
+    width: 6.4px;
+    height: 6.4px;
+    mask-image: url("/__spritemap#sprite-arrow-button-view");
+    mask-position: center;
+    mask-size: 6.4px 6.4px;
+    background-color: #ffffff;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-width: 198px;
+    height: 56px;
+
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 24px;
+      width: 8px;
+      height: 8px;
+      mask-size: 8px 8px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 199px;
+    min-height: 58px;
+  }
+}
+
+.hero__link--disabled {
+  color: $disabled;
+  border-color: $disabled;
+  pointer-events: none;
+
+  .hero__button-decoration-inner {
+    background-color: $disabled;
+  }
+
+  .hero__button-decoration-inner::after {
+    background-color: #ffffff;
+  }
+}
+
+// Swiper
+
+.hero .hero__swiper {
+  width: 100%;
+  z-index: auto;
+}
+
+.hero .hero__swiper-wrapper {
+  z-index: auto;
+}
+
+.hero__slide {
+  height: auto;
+
+  &:first-of-type {
+    br {
+      display: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      br {
+        display: block;
+      }
+    }
+  }
+}
+
+.hero .hero__pagination {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 80px;
+  width: fit-content;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 12px 12px 0 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  z-index: 2;
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+
+  &::after {
+    bottom: 0;
+    right: -10px;
+
+    @include decoration-angle(10px, 10px);
+  }
+
+  @media (min-width: $tablet-width) {
+    min-width: 100px;
+    height: 40px;
+    border-radius: 20px 20px 0 0;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &::after {
+      right: -20px;
+      width: 20px;
+      height: 20px;
+      mask-size: 20px 20px;
+    }
+  }
+}
+
+.hero__pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border: 2px solid $primary-color;
+  border-radius: 100%;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color;
+    border-color: #ffffff;
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    background-color: $primary-color;
+    opacity: 1;
+    outline: 1px solid transparent;
+  }
+
+  &:active {
+    background-color: #275699;
+    border-color: #275699;
+    opacity: 1;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+    border-color: transparent;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero__pagination-bullet--active {
+  background-color: $primary-color;
+}

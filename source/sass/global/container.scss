@@ -1,0 +1,88 @@
+@use "./variables";
+
+.container {
+  margin: 0 auto;
+  min-width: $phone-width;
+  max-width: $phone-width;
+  padding-left: $phone-padding-x;
+  padding-right: $phone-padding-x;
+
+  @media (min-width: $tablet-width) {
+    min-width: $tablet-width;
+    max-width: $tablet-width;
+    padding-left: $tablet-padding-x;
+    padding-right: $tablet-padding-x;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: $desktop-width-container;
+    max-width: $desktop-width-container;
+    padding-left: $desktop-padding-x;
+    padding-right: $desktop-padding-x;
+  }
+}
+
+.container--mobile {
+  display: contents;
+
+  @media (max-width: $pre-tablet-width) {
+    display: block;
+  }
+}
+
+.container--tablet {
+  display: contents;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: contents;
+  }
+}
+
+.container--desktop {
+  display: contents;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
+.container--tablet-plus {
+  display: contents;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+.container--hero-desktop {
+  @media (min-width: $desktop-width) {
+    padding-left: 25px;
+  }
+}
+
+.container--programs-tablet-plus {
+  @media (min-width: $tablet-width) {
+    padding-right: 0;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 1440px;
+    max-width: 1440px;
+    padding-left: $tablet-padding-x;
+    padding-right: $tablet-padding-x;
+  }
+}
+
+.container--news-list-mobile {
+  display: contents;
+
+  @media (max-width: $pre-tablet-width) {
+    display: block;
+    padding-right: 0;
+  }
+}

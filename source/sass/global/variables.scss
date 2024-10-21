@@ -1,0 +1,27 @@
+/* Шрифты */
+$font: "Manrope", "Arial", sans-serif;
+
+/* Экран */
+$desktop-width-container: 1290px;
+
+/* Брейкпоинты */
+$phone-width: 320px;
+$pre-tablet-width: 767px;
+$tablet-width: 768px;
+$pre-desktop-width: 1439px;
+$desktop-width: 1440px;
+
+/* Паддинги */
+$phone-padding-x: 15px;
+$tablet-padding-x: 45px;
+$desktop-padding-x: 25px;
+
+
+/* Цвета */
+$primary-text-color: #484848;
+$secondary-color: #f0efe9;
+$primary-color: #316dc2;
+$primary-bg-color: #f0efe9;
+$form-error: #ff5e66;
+$form-error-bg: rgba(255, 94, 102, 0.2);
+$disabled: #a9afb7;

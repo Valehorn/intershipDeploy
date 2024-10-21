@@ -1,0 +1,37 @@
+// Vendor
+@import "vendor/normalize";
+
+// Global
+@import "global/variables";
+@import "global/fonts";
+@import "global/mixins";
+@import "global/container";
+@import "global/visually-hidden";
+@import "global/global";
+@import "global/link";
+@import "global/button";
+@import "global/title";
+@import "global/animations";
+
+
+// Blocks
+@import "blocks/page-body";
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/hero";
+@import "blocks/page-main";
+@import "blocks/about";
+@import "blocks/programs";
+@import "blocks/slider-scrollbar";
+@import "blocks/grant";
+@import "blocks/news";
+@import "blocks/faq";
+@import "blocks/reviews";
+@import "blocks/contacts";
+@import "blocks/form-group";
+@import "blocks/form";
+@import "blocks/footer";
+@import "blocks/social-list";
+@import "blocks/modal";
+@import "blocks/swiper-overflow";
+@import "blocks/swiper-button";

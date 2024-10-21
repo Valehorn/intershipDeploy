@@ -1,0 +1,88 @@
+@use "../global/variables";
+
+.swiper-button {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  outline: 1px solid transparent;
+  transition: opacity 0.3s ease;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 30px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  &::after {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 39%;
+    content: "";
+    width: 14px;
+    height: 9px;
+    transform: translate(-50%, -50%);
+    mask-image: url("/__spritemap#sprite-arrow-swiper-button-view");
+    mask-size: 14px 9px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $primary-color;
+    transition: background-color 0.3s ease-in, opacity 0.3s ease;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    &::before {
+      background-color: #ffffff;
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: #ffffff;
+      opacity: 0.7;
+    }
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &:disabled {
+    &::after {
+      background-color: $disabled;
+    }
+  }
+}
+
+.swiper-button--prev {
+  transform: rotate(180deg);
+
+  &::after {
+    top: calc(50% + 1px);
+  }
+}
+
+.swiper-button--disabled {
+  pointer-events: none;
+
+  &::after {
+    background-color: $disabled;
+  }
+}
