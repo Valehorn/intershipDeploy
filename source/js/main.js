@@ -24,4 +24,4 @@ const bootStrap = () => {
 
 bootStrap();
 
-console.log('Деплой 1!');
+console.log('Деплой 2!');
