@@ -9,6 +9,7 @@
     "test-content": "vitest content.test.ts --ui",
     "build": "vite build --emptyOutDir",
     "preview": "vite preview --open",
+    "deploy": "gh-pages -d dist",
     "convert-rastr": "node convert-rastr.js",
     "w3c": "html-validator source --quiet",
     "linthtml": "linthtml source",
@@ -49,6 +50,7 @@
     "w3c-html-validator": "1.7.0"
   },
   "dependencies": {
+    "gh-pages": "^6.2.0",
     "swiper": "11.1.3"
   },
   "engines": {

@@ -6,6 +6,7 @@ import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 export default {
   plugins: [
     VitePluginSvgSpritemap('source/img/sprite/*.svg', {
+      output: 'dist/sprite.svg',
       styles: false,
       injectSVGOnDev: true,
     }),
@@ -65,7 +66,7 @@ export default {
   build: {
     outDir: '../dist',
   },
-  base: './',
+  base: '/intershipDeploy/',
   server: {
     port: 3000,
   }
