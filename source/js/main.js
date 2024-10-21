@@ -23,5 +23,3 @@ const bootStrap = () => {
 };
 
 bootStrap();
-
-console.log('Деплой 2!');
