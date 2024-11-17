@@ -1,4 +1,4 @@
-const isEscapeKey = (evt) => evt.key === 'Escape';
+const isEscapeKey = (evt) => evt.code === 'Escape';
 
 const scrollToStart = () => {
   window.scrollTo(0, 0);
